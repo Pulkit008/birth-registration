@@ -46,16 +46,17 @@ footer {
 }
 
 .input-field .prefix.active {
-    color: #000c75 !important;
+    color: #0059ac !important;
 }
 
 .input-field label {
-    color: #000c75 !important;
+    color: #0059ac !important;
 }
 
-.input-field input:focus {
-    border-bottom: 1px solid #000c75 !important;
-    box-shadow: 0 1px 0 0 #000c75 !important;
+.input-field input:focus,
+.input-field textarea:focus {
+    border-bottom: 1px solid #0059ac !important;
+    box-shadow: 0 1px 0 0 #0059ac !important;
 }
 
 .msg {
