@@ -123,7 +123,6 @@ function registervalidate(idname, idmsg1, iddob, idmsg2, idpob, idmsg3, idmo, id
             }
         }
     }
-    return false;
 }
 
 

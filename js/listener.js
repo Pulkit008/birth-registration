@@ -1,0 +1,10 @@
+firebase.auth().onAuthStateChanged(function(user){
+    if(user){
+        user.getIdToken().then((data)=>{
+            localStorage.setItem('bircer_token',data);
+        })
+    }
+    else{
+        localStorage.removeItem('bircer_token')
+    }
+})

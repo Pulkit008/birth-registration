@@ -28,9 +28,7 @@
                 <div class="col l4 m6 s12">
                     <div class="card center">
                         <h3 class="box-heading">Login</h3>
-                        <form
-                            onsubmit="return loginvalidate('email','msg1','password','msg2')"
-                            action="" method="post">
+                        <form id="loginForm">
                     
                             <div class="input-field">
                                 <i class="material-icons-outlined prefix">email</i>
@@ -47,7 +45,7 @@
                                 <p id="msg2" class="msg"></p>
                             </div>
                             <br><br>
-                            <button class="btn indigo darken-4 waves-effect waves-light" type="submit" name="action">Login</button>
+                            <button class="btn indigo darken-4 waves-effect waves-light" type="submit" id="submit" name="action">Login</button>
                         </form><br><br>
                     </div>
                 </div>
@@ -73,6 +71,12 @@
             $('.sidenav').sidenav();
         });
     </script>
-</body>
 
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-auth.js"></script>
+    <script src="/js/firebase.js"></script>
+    <script src="/js/login.js"></script>
+
+</body>
 </html>

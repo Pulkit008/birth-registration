@@ -19,15 +19,13 @@
                     <a href="index.html" class="brand-logo"><img src="img/logo-top.jpg" alt=""></a>
                     <a href="" class="sidenav-trigger" data-target="slide-out"><i class="material-icons">menu</i></a>
                     <ul class="right hide-on-small-and-down hide-on-med-and-down">
-                        <li class="dashboard-link"><a href="">Dashboard</a></li>
-                        <li class="logout-btn"><a class="btn waves-effect waves-light blue darken-3" href=""><i class="material-icons left">exit_to_app</i>Logout</a></li>
+                        <li class="logout-btn"><a id="logout" class="btn waves-effect waves-light blue darken-3" href=""><i class="material-icons left">exit_to_app</i>Logout</a></li>
                     </ul>
             </div>
         </nav>
 
         <ul class="sidenav" id="slide-out">
             <li class="center"><img src="img/logo-top.jpg" alt="" width="200"></li>
-            <li><a href=""><i class="material-icons">dvr</i>Dashboard</a></li>
             <li><a href=""><i class="material-icons">exit_to_app</i>Logout</a></li>
         </ul>
     </header>
@@ -36,40 +34,32 @@
         <div class="part">
 
             <div class="row center">
-                <table class="centered highlight responsive-table">
-                    <thead>
-                        <tr>
-                            <th>Registration No</th>
-                            <th>Name</th>
-                            <th>Date of Birth</th>
-                            <th>View/Print</th>
-                            <th>Update</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>B-2020:9-06522-000000</td>
-                            <td>Abc xyz</td>
-                            <td>01-01-2000</td>
-                            <td><a class="btn waves-effect waves-light blue darken-3" href="">View</a></td>
-                            <td><a class="btn waves-effect waves-light" href="">Update</a></td>
-                        </tr>
-                        <tr>
-                            <td>B-2020:9-06522-000000</td>
-                            <td>Abc xyz</td>
-                            <td>01-01-2000</td>
-                            <td><a class="btn waves-effect waves-light blue darken-3" href="">View</a></td>
-                            <td><a class="btn waves-effect waves-light" href="">Update</a></td>
-                        </tr>
-                        <tr>
-                            <td>B-2020:9-06522-000000</td>
-                            <td>Abc xyz</td>
-                            <td>01-01-2000</td>
-                            <td><a class="btn waves-effect waves-light blue darken-3" href="">View</a></td>
-                            <td><a class="btn waves-effect waves-light" href="">Update</a></td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="col l4 m6 s12 offset-l1">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="img/view-update-print.svg" height="200">
+                        </div>
+                        <div class="card-content">
+                            <p>View | Update | Print</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="/viewUpdatePrint.html">Click Here</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col l4 m6 s12 offset-l2">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="img/register.svg" height="200">
+                        </div>
+                        <div class="card-content">
+                            <p>Register</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="/register.html">Click Here</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
@@ -89,6 +79,11 @@
             $('.sidenav').sidenav();
         });
     </script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-auth.js"></script>
+    <script src="/js/firebase.js"></script>
+    <script src="/js/logout.js"></script>
 </body>
 
 </html>
