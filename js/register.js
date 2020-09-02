@@ -6,9 +6,31 @@ document.addEventListener('DOMContentLoaded',function(){
         if(registervalidate('cname', 'msg1', 'dob', 'msg2', 'pob', 'msg3', 'mothername', 'msg4', 'fathername', 'msg5', 'addr1', 'msg6', 'addr2', 'msg7')===true){
             const user=buildUser();
             console.log(user)
+            registerRequest(user)
         }
     })
 })
+
+const registerRequest=(user)=>{
+    let url="http://localhost:3000/"
+
+    fetch(url+'register',{
+        method:'POST',
+        headers:{
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer '+localStorage.getItem('bircer_token')
+        },
+        body:JSON.stringify(user)
+    }).then(response=>{
+        response.json().then((json)=>{
+            console.log(json)
+            window.open(url+'certificates/'+json.data.registration_number,'_blank')
+        })
+    }).catch(error=>{
+        alert(error)
+    })
+}
+
 
 const buildUser=()=>{
     let candidate_name=document.querySelector('#cname').value
@@ -36,20 +58,5 @@ const buildUser=()=>{
         parent_address_permanent,
     }
     if(remarks.length>0)    user['remarks']=remarks
-    
-    // let url="<url_here>"
-
-    // fetch(url,{
-    //     method:'POST',
-    //     headers:{
-    //         'Content-Type': 'application/json'
-    //     },
-    //     body:user
-    // }).then(response=>{
-
-    // }).catch(error=>{
-    //     alert(error)
-    // })
-
     return user;
 }
